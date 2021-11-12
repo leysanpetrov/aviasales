@@ -1,0 +1,33 @@
+.container {
+  width: 502px;
+  height: 184px;
+  background-color: white;
+margin-bottom: 20px;
+}
+
+.containerFlight {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.title{
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 26px;
+  margin-top: 26px;
+  margin-left: 20px;
+}
+
+.price {
+  size: 24px;
+  line-height: 24px;
+  color: #2196F3;
+  width: 147px;
+}
+
+.airline{
+margin-left: 175px;
+  width: 110px;
+}
+

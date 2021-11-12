@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 232px;
+  height: 252px;
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 240px;
+  font-size: 13px;
+  line-height: 20px;
+  cursor: auto;
+}
+
+.checkbox :hover {
+  background: #F1FCFF;
+}
+
+.title {
+  font-size: 12px;
+  margin-bottom: 20px;
+}

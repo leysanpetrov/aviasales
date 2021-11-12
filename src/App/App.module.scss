@@ -1,0 +1,30 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  background-color: #F3F7FA;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerContent {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.containerFlight {
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 60px;
+}

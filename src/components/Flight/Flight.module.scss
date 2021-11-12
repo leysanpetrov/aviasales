@@ -1,0 +1,33 @@
+.container {
+display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.travelTime {
+  font-size: 14px;
+  line-height: 21px;
+  width: 141px;
+  margin-left: 20px;
+
+}
+
+.transfer {
+  font-size: 14px;
+  line-height: 21px;
+  width: 141px;
+  margin-left: 20px;
+}
+
+.flight {
+  font-size: 14px;
+  line-height: 21px;
+  width: 141px;
+}
+
+.title {
+  font-size: 12px;
+  line-height: 18px;
+  color: #A0B0B9;
+}
