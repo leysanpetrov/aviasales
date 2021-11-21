@@ -1,11 +1,19 @@
+
 .container {
   display: flex;
   flex-direction: column;
-  width: 232px;
+  width: 30%;
   height: 252px;
   padding: 20px;
   background-color: white;
   margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: none;
+  }
 }
 
 .checkbox {
@@ -26,3 +34,5 @@
   font-size: 12px;
   margin-bottom: 20px;
 }
+
+

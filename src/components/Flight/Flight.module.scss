@@ -3,12 +3,14 @@ display: flex;
   flex-wrap: nowrap;
   margin-bottom: 10px;
   margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
 }
 
 .travelTime {
   font-size: 14px;
   line-height: 21px;
-  width: 141px;
+  max-width: 141px;
   margin-left: 20px;
 
 }
@@ -16,14 +18,14 @@ display: flex;
 .transfer {
   font-size: 14px;
   line-height: 21px;
-  width: 141px;
+  max-width: 141px;
   margin-left: 20px;
 }
 
 .flight {
   font-size: 14px;
   line-height: 21px;
-  width: 141px;
+  max-width: 141px;
 }
 
 .title {
