@@ -9,10 +9,6 @@ const { TabPane } = Tabs
 const Navigation = () => {
 
   return (
-    // <ul className={classes.container}>
-    //   <li key="1">"САМЫЙ ДЕШЕВЫЙ"</li>
-    //   <li key="2">"САМЫЙ БЫСТРЫЙ"</li>
-    // </ul>
     <Tabs className={classes.container} type="card">
       <TabPane className={classes.tab} tab="САМЫЙ ДЕШЕВЫЙ" key="1" size={"250px"}>
       </TabPane>

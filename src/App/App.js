@@ -12,6 +12,13 @@ export default class App extends Component {
 
   state = {
     tickets: null,
+    error: false
+  };
+
+  onError = () => {
+    this.setState({
+      error: true
+    });
   };
 
   aviasales = new AviasalesServices()
@@ -34,7 +41,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { tickets } = this.state
+    const { tickets, error } = this.state
     return (
       <div className={classes.container}>
         <img className={classes.logo} src={Logo} alt="Logo" />
@@ -44,6 +51,7 @@ export default class App extends Component {
             <Navigation />
             <TicketList
               tickets={tickets}
+              error={error}
             />
           </div>
         </div>

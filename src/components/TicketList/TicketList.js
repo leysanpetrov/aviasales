@@ -1,8 +1,19 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import FlightCard from '../FlightCard/FlightCard'
 import classes from "./TicketList.module.scss"
+import { Alert } from 'antd'
 
-const TicketsList = ({tickets}) => {
+const TicketsList = ({tickets,error}) => {
+
+  const errorAlert =  <Alert
+      className="alert"
+      message="SORRY!"
+      description="something has gone terribly wrong (but we try to fix it)"
+      type="error"
+    />
+
+  const errorMessage = error ? errorAlert : null
+
       const ticketsList = tickets?.map((ticket) => {
         return(
           <li className={classes.ticket} key={tickets.indexOf(ticket)}>
@@ -25,6 +36,7 @@ const TicketsList = ({tickets}) => {
       })
   return (
     <ul className={classes.ticketList}>
+      {errorMessage}
       {ticketsList}
     </ul>
   )

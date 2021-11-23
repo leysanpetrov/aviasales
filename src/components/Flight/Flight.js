@@ -1,20 +1,10 @@
 import React from "react"
 import classes from "./Flight.module.scss"
+import getTime from "../../Utilities/getTime"
+import timeToString from "../../Utilities/timeToString"
 
 const Flight = ({cityCode1, cityCode2, departureDate, stops, duration}) => {
 
-  const timeToString = (time) => {
-    const diffInHrs = time / 60
-    const hh = Math.floor(diffInHrs)
-
-    const diffInMin = (diffInHrs - hh) * 60
-    const mm = Math.floor(diffInMin)
-
-    const formattedHH = hh.toString().padStart(2, '0')
-    const formattedMM = mm.toString().padStart(2, '0')
-
-    return `${formattedHH}ч${formattedMM}м`
-  }
 
   let transfer
 
@@ -32,10 +22,6 @@ const Flight = ({cityCode1, cityCode2, departureDate, stops, duration}) => {
   }
 
   const arrival = new Date(departureDate).getTime() + duration * 60 * 1000
-
-  const getTime = (date) => {
-    return `${new Date(date).getUTCHours().toString().padStart(2, '0')}:${new Date(date).getUTCMinutes().toString().padStart(2, '0')}`
-  }
 
   return (
     <div className={classes.container}>

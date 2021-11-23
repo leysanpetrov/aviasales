@@ -1,14 +1,10 @@
 import React from "react"
 import classes from "./FlightCard.module.scss"
 import Flight from "../Flight/Flight"
+import priceWithSpaces from "../../Utilities/Utillites"
 
 const FlightCard = ({price, carrier, cityCode1To, cityCode2To, dateTo, stopsTo, durationTo,
                      cityCodeBack, cityCode2Back, dateBack, stopsBack, durationBack }) => {
-
-
-  const  priceWithSpaces = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-  }
 
   return (
     <div className={classes.container}>
