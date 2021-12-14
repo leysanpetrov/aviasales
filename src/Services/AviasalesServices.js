@@ -25,6 +25,6 @@ export default class AviasalesServices {
 
   getTickets = async () => {
     const res = await this.getResource()
-    return res.tickets.slice(0, 5).map(FactoryTickets)
+    return res.tickets.map(FactoryTickets)
   }
 }

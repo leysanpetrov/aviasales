@@ -5,7 +5,6 @@ import timeToString from "../../Utilities/timeToString"
 
 const Flight = ({cityCode1, cityCode2, departureDate, stops, duration}) => {
 
-
   let transfer
 
   if (!stops.length) {

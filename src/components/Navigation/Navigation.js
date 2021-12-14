@@ -2,31 +2,42 @@ import React from 'react'
 import classes from "./Navigation.module.scss"
 import 'antd/dist/antd.css'
 import { Tabs } from 'antd'
+import {VisibilityFilters} from '../../actions/actions'
+import { connect } from 'react-redux'
+import compose from '../../Utilities/compose'
+import {changeFilter} from '../../actions/actions'
 
 
 const { TabPane } = Tabs
 
-const Navigation = () => {
+const Navigation = ({ changeFilter }) => {
 
   return (
-    <Tabs className={classes.container} type="card">
-      <TabPane className={classes.tab} tab="САМЫЙ ДЕШЕВЫЙ" key="1" size={"250px"}>
+    <Tabs className={classes.container} type="card"  onChange={(filter) => changeFilter(filter)}>
+      <TabPane className={classes.tab}
+               tab="САМЫЙ ДЕШЕВЫЙ"
+               key={VisibilityFilters.showCheaper}
+               size={"250px"}
+      >
       </TabPane>
-      <TabPane className={classes.tab} tab="САМЫЙ БЫСТРЫЙ" key="2">
+      <TabPane className={classes.tab}
+               tab="САМЫЙ БЫСТРЫЙ"
+               key={VisibilityFilters.showFaster}
+      >
       </TabPane>
     </Tabs>
   )
 }
 
-export default Navigation
+const mapStateToProps = (state) => {
+  return {
+    filter: state.filter
+  }
+}
 
-// <Tabs clasName={classes.container} activeKey defaultActiveKey="1" type="card" >
-//   <TabPane style={{ backgroundColor: "red" }}
-// clasName={classes.isActiveTab}
-// tab="САМЫЙ ДЕШЕВЫЙ"
-// key="1">
-//   </TabPane>
-// <TabPane tab="САМЫЙ БЫСТРЫЙ"
-//          key="2">
-// </TabPane>
-// </Tabs>
+const mapDispatchToProps = {
+  changeFilter
+}
+
+export default compose(connect(mapStateToProps, mapDispatchToProps))(Navigation)
+
