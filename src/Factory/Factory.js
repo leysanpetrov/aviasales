@@ -1,5 +1,4 @@
-const FactoryTickets = (ticket) => {
-  return {
+const FactoryTickets = (ticket) => ({
     price: ticket.price,
     carrier: ticket.carrier,
     cityCode1To: ticket.segments[0].origin,
@@ -12,7 +11,6 @@ const FactoryTickets = (ticket) => {
     dateBack: ticket.segments[1].date,
     stopsBack: ticket.segments[1].stops,
     durationBack: ticket.segments[1].duration,
-  };
-};
+  });
 
 export default FactoryTickets

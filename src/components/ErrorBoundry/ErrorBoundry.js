@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import classes from "./ErrorBoundry.module.scss"
 import ErrorIndicator from '../ErrorIndicator/ErrorIndicator'
 
 
-export default class ErrorBoundry extends Component {
+export default class ErrorBoundary extends Component {
 
   state = {
     hasError: false
   }
 
-  componentDidCatch (error, errorInfo) {
+  componentDidCatch() {
     this.setState({
       hasError: true
     })

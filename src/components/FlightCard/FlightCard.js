@@ -4,9 +4,7 @@ import Flight from "../Flight/Flight"
 import priceWithSpaces from "../../Utilities/Utillites"
 
 const FlightCard = ({price, carrier, cityCode1To, cityCode2To, dateTo, stopsTo, durationTo,
-                     cityCodeBack, cityCode2Back, dateBack, stopsBack, durationBack }) => {
-
-  return (
+                     cityCodeBack, cityCode2Back, dateBack, stopsBack, durationBack}) => (
     <div className={classes.container}>
       <div className={classes.title}>
         <div className={classes.price}>{priceWithSpaces(price)} P</div>
@@ -30,6 +28,5 @@ const FlightCard = ({price, carrier, cityCode1To, cityCode2To, dateTo, stopsTo, 
       </div>
     </div>
   )
-}
 
 export default FlightCard

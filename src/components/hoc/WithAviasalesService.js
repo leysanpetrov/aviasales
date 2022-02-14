@@ -2,20 +2,13 @@ import React from "react"
 import {AviasalesConsumer} from '../AviasalesContext/AviasalesContext'
 
 
-const WithAviasalesService = () => (Wrapped) => {
-
-  return (props) => {
-    return (
+const WithAviasalesService = () => (Wrapped) => (props) => (
       <AviasalesConsumer>
         {
-          (aviasalesServices) => {
-            return (<Wrapped {...props}
+          (aviasalesServices) => (<Wrapped {...props}
                              aviasalesServices={aviasalesServices}/>)
-          }
         }
       </AviasalesConsumer>
     )
-  }
-}
 
 export default WithAviasalesService

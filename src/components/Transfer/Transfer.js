@@ -1,20 +1,14 @@
 import React from "react";
-import classes from "./Transfer.module.scss";
 import { connect } from 'react-redux';
+import { Checkbox } from 'antd';
+import classes from "./Transfer.module.scss";
 import compose from '../../Utilities/compose';
 import { checkAllChange, onChangeCheckbox } from "../../actions/actions";
-import { Checkbox } from 'antd';
 
 
 
-const Transfer = ({ checkedList, indeterminate, checkAll, onChangeCheckbox, checkAllChange }) => {
-
-  // const plainOptions = [
-  //   { name:'0 Без пересадок', value: 0 },
-  //   { name: '1 пересадка', value: 1 },
-  //   { name: '2 пересадки', value: 2 },
-  //   { name: '3 пересадки', value: 3 }
-  // ];
+// eslint-disable-next-line no-shadow
+const Transfer = ({ checkedList, indeterminate, checkAll, onChangeCheckbox, checkAllChange}) => {
 
   const plainOptions = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки']
 
@@ -25,7 +19,7 @@ const Transfer = ({ checkedList, indeterminate, checkAll, onChangeCheckbox, chec
       </div>
       <Checkbox className={classes.checkboxAll}
                 indeterminate={indeterminate}
-                onChange={(e) => checkAllChange(e)}
+                onChange={(ev) => checkAllChange(ev)}
                 checked={checkAll}
                 defaultValue={['Все']}
       >
@@ -41,13 +35,11 @@ const Transfer = ({ checkedList, indeterminate, checkAll, onChangeCheckbox, chec
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
     checkedList: state.checkedList,
     indeterminate: state.indeterminate,
     checkAll: state.checkAll
-  }
-}
+  })
 
 const mapDispatchToProps = {
     checkAllChange,

@@ -1,18 +1,15 @@
 import React from 'react'
-import classes from "./Navigation.module.scss"
-import 'antd/dist/antd.css'
-import { Tabs } from 'antd'
-import {VisibilityFilters} from '../../actions/actions'
 import { connect } from 'react-redux'
+import { Tabs } from 'antd'
+import classes from "./Navigation.module.scss"
+import {VisibilityFilters, changeFilter} from '../../actions/actions'
 import compose from '../../Utilities/compose'
-import {changeFilter} from '../../actions/actions'
 
 
 const { TabPane } = Tabs
 
-const Navigation = ({ changeFilter }) => {
-
-  return (
+// eslint-disable-next-line no-shadow
+const Navigation = ({ changeFilter }) => (
     <Tabs className={classes.container} type="card"  onChange={(filter) => changeFilter(filter)}>
       <TabPane className={classes.tab}
                tab="САМЫЙ ДЕШЕВЫЙ"
@@ -27,13 +24,10 @@ const Navigation = ({ changeFilter }) => {
       </TabPane>
     </Tabs>
   )
-}
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
     filter: state.filter
-  }
-}
+  })
 
 const mapDispatchToProps = {
   changeFilter
