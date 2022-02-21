@@ -45,20 +45,14 @@ const disableLoader = () => ({
 
 
 const fetchTickets = (aviasalesServices) => (dispatch) => {
-  console.log("fetchTickets")
   dispatch(ticketsRequested())
-  console.log(aviasalesServices)
   aviasalesServices.getSearchId()
     .then(async () => {
-      console.log("in")
       for (let i = false; i !== true;) {
-        console.log("в цикле")
         // eslint-disable-next-line no-await-in-loop
         const response = await aviasalesServices.getTickets()
         if (response) {
-          console.log(response.stop)
           if (response.stop === true) {
-            console.log(response.stop)
             dispatch(disableLoader())
             break
           }
