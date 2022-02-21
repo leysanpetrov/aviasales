@@ -4,7 +4,7 @@ import { Spin } from 'antd'
 import { connect } from 'react-redux'
 import FlightCard from '../FlightCard/FlightCard'
 import classes from './TicketList.module.scss'
-import { fetchTickets } from '../../actions/actions'
+import { fetchTickets }  from '../../actions/actions'
 import WithAviasalesService from '../hoc/WithAviasalesService'
 import compose from '../../Utilities/compose'
 import ErrorIndicator from '../ErrorIndicator/ErrorIndicator'
@@ -53,7 +53,7 @@ const TicketsList = ({ tickets, checkedListLength, allDuration, filter }) => {
 class TicketsListContainer extends Component {
 
   componentDidMount () {
-    this.props.fetchTickets()
+    this.props.fetchTickets(this.props.aviasalesServices)
   }
 
   render () {
@@ -93,12 +93,12 @@ const mapStateToProps = (state) => ({
     error: state.error
   })
 
-const mapDispatchToProps = (dispatch, { aviasalesServices }) => ({
-    fetchTickets: fetchTickets(aviasalesServices, dispatch)
-  })
+// const mapDispatchToProps = (dispatch, { aviasalesServices }) => ({
+//     fetchTickets: () => fetchTickets(aviasalesServices)
+//   })
 
 export default compose(
   WithAviasalesService(),
-  connect(mapStateToProps, mapDispatchToProps)
+  connect(mapStateToProps, { fetchTickets })
 )(TicketsListContainer)
 
